@@ -1,0 +1,90 @@
+:root /*   variáveis css*/
+ {
+    --color-background: #F0F0F7;
+    --color-primary-lighter: #9871F5;
+    --color-primary-light: #916BEA;
+    --color-primary: #8257E5;
+    --color-primary-dark: #774DD6;
+    --color-primary-darker: #6842c2;
+    --color-secondary: #04D361;
+    --color-secondary-dark: #04BF58;
+    --color-title-in-primary: #0e1872;
+    --color-text-in-primary: #D4C2FF;
+    --color-text-title: #32264D;
+    --color-text-complement: #9C98A6;
+    --color-text-base: #6A6180;
+    --color-line-in-white: #E6E6F0;
+    --color-input-background: #F8F8FC;
+    --color-button-text: #FFFFFF;
+    --color-box-base: #FFFFFF;
+    --color-box-footer: #FAFAFC;
+    --color-small-info: #C1BCCC;
+    /*tamanho padrão 100%--16px--1rm*/
+    font-size: 100%; /* controle das medidas rem */}
+
+    body { 
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;}
+
+        h1{color: rgb(221, 218, 218);
+            /*justify-content: center;*/}
+    
+        h1{font-size: 2em}
+        p{color: white;
+        font-size: 1rem;
+        margin-left: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;}
+
+        a {width: 25rem;
+            height: 3rem;
+            border-radius: .5rem;
+            border: 0rem;
+            margin-left: 10rem;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            font: 700 2.4 archivo;
+            display: flex;
+            align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          color: var(--color-button-text);
+          background-color: var(--color-secondary-dark);
+        cursor: pointer;
+        position: relative;}
+
+          
+
+    .back-image {width: 61vw;
+        height: 71vh;
+        display: flex;
+        position: absolute;
+        bottom: 8.2rem;
+        left: 16rem;}
+    
+
+    .logo-container{
+        display: center;
+        text-align: center;
+        justify-self: center;
+    }
+
+    #container {background-color: var(--color-primary-dark)}
+
+    #container { /*modelo da caixa*/
+         width: 700px;
+        max-width: 700px; /*para caso alguém mexa pelo celular n ficar zuado*/
+        padding-top: 30px;
+         padding-bottom: 10px;
+        padding-right: 120px;
+        padding-left: 50px;}
+
+    body,
+    input,
+    button,
+    textarea{ font: 500 1.0rem Poppins;
+              color: var(--color-text-base);}
+

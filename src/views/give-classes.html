@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- lang é um atributo-->
+<!-- h1 é uma letra mais realçada-->
+<!--p é um parágrafo para quebra de linha-->
+<!--display: flex; é  pra colocar um do lado do outro-->
+<!--display block é pra garantir que ele fique solo, e só da pra usar margin top com ele ativado-->
+<!--align-items: center;--->
+<!---justify-content: center;--->
+<!--hover faz o icone brilhar ao colocar mouse-->
+<!--cursor pointer faz a mãozinha tipo link-->
+<!--postion absolute marca onde eu clicar para preencher algo-->
+<!--position relative para que a marcação ocorra certinho onde eu quero e n descaralhada-->
+<!--header = cabeçalho, cabeça, parte de cima de algo-->
+<!--@media para desktop com min width e max-->
+<!--flex:1 1; estica em toda a caixa "n existe display nesse ai"-->
+<!--ctrl D pra selecionar ele e todos parecido-->
+<!--id = #
+    class = .
+    se for tag é só o nome sem nada, tag é o começo da escrita em html-->
+<!--tag br para quebra de linha-->
+<!-- !important faz acontecer no matter what, usado bastante em margin e afins-->
+<!--target="_blank" é pra abrir uma nova aba ao clicar em um link-->    
+
+ 
+<html lang="pt_br"></html>
+
+<title>tentando ficar rico igual o rugal</title> 
+
+<script src="/Scripts/addField.js" defer></script>
+
+<head>
+  
+   <meta name="viewport" content="width=device-width, initial scale=100"> 
+  
+
+ 
+   <link rel="stylesheet" href="/Styles/main.css">
+   <link rel="stylesheet" href="/Styles/partials/header.css">
+   <link rel="stylesheet" href="/Styles/partials/form.css">
+   <link rel="stylesheet" href="/Styles/partials/page-give-classes.css">
+
+   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+</head>
+
+<body id="page-give-classes">
+
+
+   <div id="container">
+
+      <header class="page-header">
+         <div class="top-bar-container">
+            <a href="/">
+             <img src="/images/icons/back.svg" alt="voltar">
+            </a>
+            <img src="/images/logo.svg" alt="proffy">
+         </div>
+            <div class="header-content">
+               <strong>Que incrível que você quer dar aulas</strong>
+               <p>O primeiro passo, é preencher esse formulário de inscrição</p>
+
+            </div>
+      
+
+         
+
+
+      </header>
+
+      <main> 
+         <form action="/save-classes" id="create-class" method="POST">
+            <fieldset>
+               <legend>Seus Dados</legend>
+
+               <div class="input-block">
+                  <label for="name">Nome Completo</label>
+                  <input name="name" id="name" required>
+               </div>
+               <div class="input-block">
+                  <label for="avatar">link da sua foto <small>(comece com https://)</small></label>
+                  <input name="avatar" id="avatar" type="url" required>
+               </div>
+               <div class="input-block">
+                  <label for="whatssapp">whatssapp <small>(somente números)</small></label>
+                  <input name="whatssapp" id="whatssapp" type="number" required>
+               </div>
+               <div class="textarea-block">
+                  <label for="bio">biografia</label>
+                  <textarea name="bio" id="bio" required></textarea>
+               </div>
+
+            </fieldset>
+
+            <fieldset>
+               <legend>Sobre a aula</legend>
+               <div class="select-block">
+                  <label for="subject">Matéria</label>
+                  <select name="subject" id="subject" required>
+                     <option value="">Selecione uma opção</option>
+
+                     {%for subject in subjects%}
+                     <option value="{{loop.index}}">{{subject}}</option>
+                     {%endfor%}
+
+                  </select>
+               </div>
+
+               <div class="input-block">
+                  <label for="cost">Custo da sua hora/aula 
+                     <small>(R$)</small>
+                  </label>
+                  <input name="cost" type="cost" id="cost" type="number" required>
+               </div>
+            </fieldset>
+
+            <fieldset id="schedule-items">
+               <legend>Horários disponiveis
+                  <button id="add-time" type="button">+novo horário</button>
+               </legend>
+               <div class="schedule-item">
+                  <div class="select-block">
+                     <label for="weekday">Dia da semana</label>
+                     <select name="weekday[]" required>
+                     <option value="">Seleciona uma Opção</option>
+
+                     {%for weekday in weekdays%}
+                     <option value="{{loop.index0}}">{{weekday}}</option>
+                     {%endfor%}
+
+                     </select>
+                  </div>
+                  <div class="input-block">
+                     <label for="time_from">das</label>
+                     <input type="time" name="time_from[]" required>
+                  </div>
+
+                  <div class="input-block">
+                     <label for="time_to">até</label>
+                     <input type="time" name="time_to[]" required>
+                  </div>
+               
+               </div>
+
+
+            </fieldset>
+
+         </form>
+         <footer>
+            <p>
+               <img src="/images/icons/warning.svg" alt="Aviso importante">Importante! <br>
+               Preencha todos os dados
+            </p>
+            <Button type="submit" form="create-class">Salvar cadastro</Button>
+         </footer>
+
+
+      </main>
+
+   </div>
+    
+
+
+</body>
